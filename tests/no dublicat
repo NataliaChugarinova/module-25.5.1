@@ -13,8 +13,7 @@ def test_no_duplicate_pets(go_to_my_pets):
     # Сохраняем в переменную pet_data элементы с данными о питомцах
     pet_data = pytest.driver.find_elements_by_css_selector('.table.table-hover tbody tr')
 
-    # Перебираем данные из pet_data, оставляем имя, возраст, и породу остальное меняем на пустую строку
-    # и разделяем по пробелу.
+    # Перебираем данные из pet_data, оставляем имя, возраст, и породу остальное меняем на пустую строку и разделяем по пробелу.
     list_data = []
     for i in range(len(pet_data)):
         data_pet = pet_data[i].text.replace('\n', '').replace('×', '')
